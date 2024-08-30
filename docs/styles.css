@@ -1,67 +1,105 @@
-/* General Reset */
-* {
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Main Heading */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Grid Container for Live Streams */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Individual Live Stream Styles */
+.live-stream {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+}
+
+/* Live Button Styles */
+.live-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 24px; /* Increased padding */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.live-button:hover {
+    background-color: #0056b3;
+}
+
+/* Create Request Stream Section Styles */
+#create-request-stream {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Input Field Styles */
+#create-request-stream input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 12px; /* Increased padding */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
     box-sizing: border-box;
 }
 
-/* Body Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-    margin: 20px;
-}
-
-/* Header Styles */
-h1 {
-    text-align: center;
-    color: #4CAF50;
-    margin-bottom: 20px;
-}
-
-/* Container for Live Streams */
-#live-streams {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Each Live Stream Box */
-#live-streams div {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 15px;
+/* Button Styles in Request Stream */
+#create-request-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 12px 24px; /* Increased padding */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Titles of Live Streams */
-#live-streams h2 {
-    color: #333;
-    font-size: 1.5em;
-    margin-bottom: 10px;
+#create-request-button:hover {
+    background-color: #218838;
 }
 
-/* Streamer Name */
-#live-streams p {
-    margin: 5px 0;
+/* Rules Text Styles */
+#create-request-stream p {
+    font-size: 14px;
     color: #666;
 }
 
-/* Additional Styling for Button */
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-/* Button Hover Effect */
-button:hover {
-    background-color: #45a049;
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .grid-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .live-stream {
+        max-width: 100%;
+    }
 }
