@@ -11,7 +11,7 @@ SkunkPlatform is designed specifically for HTML-based streaming experiences. It 
 ## Installation
 To use SkunkPlatform:
 
-1. **Download the project files** directly from the [GitHub repository](https://github.com/yourusername/SkunkPlatform).
+1. **Download the project files** directly from the [GitHub repository](https://github.com/SkunkService/live).
 2. **Navigate to the project directory** on your local machine.
 3. **Open the `index.html` file** in your preferred web browser or editor.
 
