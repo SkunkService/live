@@ -17,6 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
 const REQUEST_INTERVAL = 60000; // 1 minute
 let lastRequestTime = 0;
 
+// Example filter functions
+const containsProfanity = (text) => {
+    const profaneWords = ['ez', 'nuv', 'pito', 'mierda', 'mrd', 'puto', 'puta', 'gassy', 'fuck', '']; // List of profane words
+    return profaneWords.some(word => text.includes(word));
+};
+
+const containsInvalidKeywords = (text) => {
+    const allowedKeywords = ['tiktok', 'twitch', 'stream']; // List of allowed keywords
+    return !allowedKeywords.some(keyword => text.toLowerCase().includes(keyword));
+};
+
 // Function to send an embedded message to a Discord webhook
 function sendToDiscordWebhook(embedTitle, embedDescription, embedColor) {
     const webhookURL = 'https://discord.com/api/webhooks/1251445860252913675/AhDR5MEFVKeCwxKWCH3EDQpOK4IKgR6B2lMY7FCSHZWNmoAiOCHPLvTw9UMw6ymPx1zD'; // Replace with your webhook URL
@@ -59,7 +70,7 @@ document.getElementById('create-request-button').addEventListener('click', () =>
     const currentTime = Date.now();
 
     // Anti-Link Validation: Check if the input contains a URL
-    const urlPattern = /https?:\/\/[^\s]+/ || /http?:\/\/[^\s]+/;
+    const urlPattern = /https?:\/\/[^\s]+/;
     if (urlPattern.test(usernameField.value) || urlPattern.test(launchingField.value)) {
         messageText.textContent = 'Links are not allowed in the request.';
         messageText.style.color = 'red'; // Change text color to red for error
@@ -71,6 +82,13 @@ document.getElementById('create-request-button').addEventListener('click', () =>
         messageText.textContent = 'Please wait a moment before making another request.';
         messageText.style.color = 'red'; // Change text color to red for error
         return; // Exit function if spam detected
+    }
+
+    // Filtering: Check for profanity and invalid keywords
+    if (containsProfanity(usernameField.value) || containsProfanity(launchingField.value)) {
+        messageText.textContent = 'This Word is violated our LIVE Guidelines and LIVE Rules';
+        messageText.style.color = 'red'; // Change text color to red for error
+        return; // Exit function if profanity is detected
     }
 
     if (usernameField.value.trim() === '' || launchingField.value.trim() === '') {
