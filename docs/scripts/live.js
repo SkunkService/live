@@ -84,13 +84,6 @@ document.getElementById('create-request-button').addEventListener('click', () =>
         return; // Exit function if spam detected
     }
 
-    // Filtering: Check for profanity and invalid keywords
-    if (containsProfanity(usernameField.value) || containsProfanity(launchingField.value)) {
-        messageText.textContent = 'This Word is violated our LIVE Guidelines and LIVE Rules';
-        messageText.style.color = 'red'; // Change text color to red for error
-        return; // Exit function if profanity is detected
-    }
-
     if (usernameField.value.trim() === '' || launchingField.value.trim() === '') {
         // Input fields are empty
         messageText.textContent = 'Please fill in both fields.';
