@@ -10,7 +10,7 @@
     <h1>Live Streams</h1>
     <div id="live-streams" class="grid-container">
         <div class="live-stream">
-            <h2>Live Stream 1</h2>
+            <h2></h2>
             <p>Streaming with TikTok</p>
             <button class="live-button" data-url="https://www.tiktok.com/@username/live">Visit LIVE</button>
         </div>
@@ -19,13 +19,15 @@
             <p>Streaming with Twitch</p>
             <button class="live-button" data-url="https://www.twitch.tv/streamer">Visit LIVE</button>
         </div>
-        <div class="live-stream">
-            <h2>Live Stream 3</h2>
-            <p>Streaming with YouTube</p>
-            <button class="live-button" data-url="https://www.youtube.com/watch?v=videoID">Visit LIVE</button>
-        </div>
     </div>
 
+    <div id="create-request-stream">
+        <input type="text" placeholder="Enter Twitch Channel Username or TikTok LIVE @username" aria-label="Twitch Channel Username">
+        <input type="text" placeholder="Enter the Streamer Launching. Example: tiktok@username, twitch/username" aria-label="Streaming With">
+        <button id="create-request-button">Create Request Stream</button>
+        <p>Rules: <br>No NSFW Allowed. <br>No Spamming Requests. <br>No Hacking on GitHub. <br>No Bullying. <br>You must follow the rules. <br>You must be Access to the TikTok LIVE or Twitch Stream.</p>
+        <p id="message-request-text"></p>
+    </div>
     <script src="scripts/live.js"></script>
 </body>
 </html>
