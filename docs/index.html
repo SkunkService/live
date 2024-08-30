@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TikTok Live Streams</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to a CSS file for styling -->
+    <title>Live Streams</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>TikTok Live Streams</h1>
-    <div id="live-streams"></div>
+    <h1>Live Streams</h1>
+    <div id="live-streams" class="grid-container">
+        <div class="live-stream">
+            <h2>Live Stream 1</h2>
+            <p>Streaming with TikTok</p>
+            <button class="live-button" data-url="https://www.tiktok.com/@username/live">Visit LIVE</button>
+        </div>
+        <div class="live-stream">
+            <h2>Live Stream 2</h2>
+            <p>Streaming with Twitch</p>
+            <button class="live-button" data-url="https://www.twitch.tv/streamer">Visit LIVE</button>
+        </div>
+        <div class="live-stream">
+            <h2>Live Stream 3</h2>
+            <p>Streaming with YouTube</p>
+            <button class="live-button" data-url="https://www.youtube.com/watch?v=videoID">Visit LIVE</button>
+        </div>
+    </div>
 
     <script src="scripts/live.js"></script>
-    <script src="scripts/tiktok.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tiktok-sdk@latest/dist/tiktok-sdk.min.js"></script>
 </body>
 </html>
