@@ -1,5 +1,3 @@
-// Assuming you have already initialized the TikTok SDK with your Client Key in another script (e.g., scripts/tiktok.js)
-
 // Function to display the live streams
 function displayLiveStreams(streams) {
   const liveStreamsElement = document.getElementById('live-streams');
