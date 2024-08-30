@@ -19,7 +19,7 @@ let lastRequestTime = 0;
 
 // Example filter functions
 const containsProfanity = (text) => {
-    const profaneWords = ['ez', 'nuv', 'pito', 'mierda', 'mrd', 'puto', 'puta', 'gassy', 'fuck', '']; // List of profane words
+    const profaneWords = ['ez', 'nuv', 'pito', 'mierda', 'mrd', 'puto', 'puta', 'gassy', 'fuck', 'pene', 'pete];
     return profaneWords.some(word => text.includes(word));
 };
 
