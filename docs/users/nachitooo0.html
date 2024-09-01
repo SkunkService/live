@@ -18,11 +18,13 @@
             background: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
 
         h1 {
             text-align: center;
             color: #333;
+            font-size: 28px;
         }
 
         .profile-info {
@@ -38,11 +40,17 @@
             height: 150px;
             object-fit: cover;
             margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-info img:hover {
+            transform: scale(1.05);
         }
 
         .profile-info h2 {
             margin: 0;
             color: #333;
+            font-size: 24px;
         }
 
         .profile-info p {
@@ -51,34 +59,61 @@
             text-align: center;
         }
 
-        .profile-links a {
-            display: inline-block;
+        .profile-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .profile-links button {
             margin: 10px;
             padding: 10px 20px;
             background-color: #333;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .profile-links a:hover {
+        .profile-links button:hover {
             background-color: #555;
+            transform: scale(1.05);
+        }
+
+        .back-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: block;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-    <a href="index.html"><button>Back to Users List</button></a>
+    <a href="index.html"><button class="back-button">Back to Users List</button></a>
     <div class="container">
         <h1>Profile: Nachitoo!</h1>
         <div class="profile-info">
-            <img src="https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/afdb0fb98c637b82eee933d7797cb7f7~c5_1080x1080.jpeg?lk3s=a5d48078&nonce=80968&refresh_token=5aa7bdd1e04c7e4abade69c859b85d9e&x-expires=1725382800&x-signature=z815qAPGXsr5jdBAd9iDUVwkd8Q%3D&shp=a5d48078&shcp=81f88b70" alt="Profile Picture">
+            <img src="https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/afdb0fb98c637b82eee933d7797cb7f7~c5_1080x1080.jpeg?lk3s=a5d48078&nonce=80968&refresh_token=5aa7bdd1e04c7e4abade69c859b85d9e&x-expires=1725382800&x-signature=z815qAPGXsr5jdBAd9iDUVwkd8Q%3D&shp=a5d48078&shcp=81f88b70" alt="Profile Picture of Nachitoo!">
             <h2>Nachitoo!</h2>
             <p>Role: Streamer</p>
             <p>Joined: September 2020</p>
-            <p>Bio:<br>Directo todos los dias :)<br>discord:Nachitoo#8186</p>
+            <p>Bio:<br>Directo todos los días :)<br>Discord: Nachitoo#8186</p>
         </div>
         <div class="profile-links">
-            <button onclick="window.open('https://www.tiktok.com/@_nachitooo0')">TikTok</button>
+            <button onclick="window.open('https://www.tiktok.com/@_nachitooo0', '_blank');">TikTok</button>
         </div>
     </div>
 </body>
