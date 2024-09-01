@@ -8,12 +8,6 @@ const containsProfanity = (text) => {
     return profaneWords.some(word => text.toLowerCase().includes(word));
 };
 
-// Invalid keywords filter
-const containsInvalidKeywords = (text) => {
-    const allowedKeywords = ['tiktok', 'twitch', 'stream'];
-    return !allowedKeywords.some(keyword => text.toLowerCase().includes(keyword));
-};
-
 // Function to send an embedded message to a Discord webhook
 function sendToDiscordWebhook(embedTitle, embedDescription, embedColor) {
     const webhookURL = 'https://discord.com/api/webhooks/1251445860252913675/AhDR5MEFVKeCwxKWCH3EDQpOK4IKgR6B2lMY7FCSHZWNmoAiOCHPLvTw9UMw6ymPx1zD'; // Replace with your webhook URL
