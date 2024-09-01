@@ -2,14 +2,15 @@
 const REQUEST_INTERVAL = 60000; // 1 minute
 let lastRequestTime = 0;
 
-// Example filter functions
+// Profanity filter
 const containsProfanity = (text) => {
     const profaneWords = ['ez', 'nuv', 'pito', 'mierda', 'mrd', 'puto', 'puta', 'gassy', 'fuck', 'pene', 'pete'];
-    return profaneWords.some(word => text.includes(word));
+    return profaneWords.some(word => text.toLowerCase().includes(word));
 };
 
+// Invalid keywords filter
 const containsInvalidKeywords = (text) => {
-    const allowedKeywords = ['tiktok', 'twitch', 'stream']; // List of allowed keywords
+    const allowedKeywords = ['tiktok', 'twitch', 'stream'];
     return !allowedKeywords.some(keyword => text.toLowerCase().includes(keyword));
 };
 
@@ -22,8 +23,8 @@ function sendToDiscordWebhook(embedTitle, embedDescription, embedColor) {
             {
                 title: embedTitle,
                 description: embedDescription,
-                color: embedColor, // Hex color code (e.g., 0x00ff00 for green)
-                timestamp: new Date(), // Optional: adds the current timestamp
+                color: embedColor,
+                timestamp: new Date(), // Adds the current timestamp
             }
         ]
     };
@@ -50,38 +51,45 @@ function sendToDiscordWebhook(embedTitle, embedDescription, embedColor) {
 // Function to handle button click
 document.getElementById('create-request-button').addEventListener('click', () => {
     const usernameField = document.querySelector('#create-request-stream input[type="text"]:nth-of-type(1)');
-    const launchingField = document.querySelector('#create-request-stream input[type="text"]:nth-of-type(2)');
+    const partnerField = document.querySelector('#create-request-stream input[type="text"]:nth-of-type(2)');
     const messageText = document.getElementById('message-request-text');
     const currentTime = Date.now();
 
     // Anti-Link Validation: Check if the input contains a URL
     const urlPattern = /https?:\/\/[^\s]+/;
-    if (urlPattern.test(usernameField.value) || urlPattern.test(launchingField.value)) {
+    if (urlPattern.test(usernameField.value) || urlPattern.test(partnerField.value)) {
         messageText.textContent = 'Links are not allowed in the request.';
-        messageText.style.color = 'red'; // Change text color to red for error
-        return; // Exit function if URL is found
+        messageText.style.color = 'red';
+        return;
     }
 
     // Anti-Spam Validation: Check if the request is made too frequently
     if (currentTime - lastRequestTime < REQUEST_INTERVAL) {
         messageText.textContent = 'Please wait a moment before making another request.';
-        messageText.style.color = 'red'; // Change text color to red for error
-        return; // Exit function if spam detected
+        messageText.style.color = 'red';
+        return;
     }
 
-    if (usernameField.value.trim() === '' || launchingField.value.trim() === '') {
-        // Input fields are empty
+    // Validation for empty fields and profanity
+    if (usernameField.value.trim() === '' || partnerField.value.trim() === '') {
         messageText.textContent = 'Please fill in both fields.';
-        messageText.style.color = 'red'; // Optional: Change text color to red for error
+        messageText.style.color = 'red';
+    } else if (containsProfanity(usernameField.value) || containsProfanity(partnerField.value)) {
+        messageText.textContent = 'Inappropriate language detected. Please revise your input.';
+        messageText.style.color = 'red';
+    } else if (containsInvalidKeywords(usernameField.value) || containsInvalidKeywords(partnerField.value)) {
+        messageText.textContent = 'Invalid keywords detected. Please use allowed keywords like "tiktok", "twitch", or "stream".';
+        messageText.style.color = 'red';
     } else {
-        // Input fields have value
-        const messageContent = `New stream request:\nUsername: ${usernameField.value}\nStreaming with: ${launchingField.value}`;
+        // If all validations pass, send the request to the Discord webhook
+        const messageContent = `New stream request:\nUsername: ${usernameField.value}\nStreaming with: ${partnerField.value}`;
         sendToDiscordWebhook('New Stream Request', messageContent, 0x00ff00); // Green color
         
         // Clear the input fields and message text
         usernameField.value = '';
-        launchingField.value = '';
-        messageText.textContent = '';
+        partnerField.value = '';
+        messageText.textContent = 'Request submitted successfully!';
+        messageText.style.color = 'green';
 
         // Update the last request time
         lastRequestTime = currentTime;
