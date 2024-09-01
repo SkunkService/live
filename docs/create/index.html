@@ -1,45 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIVE Stream - Documentation</title>
+    <title>Create Streaming</title>
+    <meta property="og:title" content="SkunkStream - Create Channel Stream" />
+    <meta property="og:description" content="Create your first Stream with SkunkStream!\nWe've available for Streaming List." />
+    <meta property="og:image" content="https://raw.githubusercontent.com/SkunkService/live/main/docs/live.jpg" />
+    <meta property="og:url" content="https://github.com/SkunkService/live/create/" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>LIVE Stream - Documentation</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Overview</h2>
-            <p>This documentation provides details about the live streaming request page available at <a href="https://user.github.io/live/create">https://user.github.io/live/create</a>. It allows users to submit a request to create a new streaming channel on the SkunkStream platform.</p>
-        </section>
-        <section>
-            <h2>Features</h2>
-            <ul>
-                <li><strong>Username Input:</strong> Field for entering the Twitch or TikTok LIVE username.</li>
-                <li><strong>Streaming Partner Input:</strong> Field for entering the streaming partner's username (e.g., tiktok@username, twitch/username).</li>
-                <li><strong>Create Request Button:</strong> Submits the streaming request form.</li>
-                <li><strong>Rules:</strong>
-                    <ul>
-                        <li>No NSFW content allowed.</li>
-                        <li>No spamming requests.</li>
-                        <li>No hacking on GitHub.</li>
-                        <li>No bullying.</li>
-                        <li>You must follow the rules.</li>
-                        <li>You must have access to the TikTok LIVE or Twitch stream.</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <h2>Additional Documentation</h2>
-            <p>This page is intended for providing documentation related to live streaming requests. Further documentation can be added as necessary to cover additional aspects of the streaming request process or other related topics.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 SkunkService</p>
-    </footer>
+     <div id="create-request-stream">
+        <input type="text" placeholder="Enter Twitch Channel Username or TikTok LIVE @username" aria-label="Twitch Channel Username">
+        <input type="text" placeholder="Enter the Streamer Launching. Example: tiktok@username, twitch/username" aria-label="Streaming With">
+        <button id="create-request-button">Create Request Stream</button>
+        <p>Rules: <br>No NSFW Allowed. <br>No Spamming Requests. <br>No Hacking on GitHub. <br>No Bullying. <br>You must follow the rules. <br>You must be Access to the TikTok LIVE or Twitch Stream.</p>
+        <p id="message-request-text"></p>
+    </div>
+
+    <script src="index.js">
 </body>
 </html>
