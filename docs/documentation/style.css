@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    padding-bottom: 50px; /* Add padding to accommodate footer */
+    padding-bottom: 50px; /* Ensure space for footer */
 }
 
 header {
@@ -20,6 +20,7 @@ h1 {
 
 main {
     padding: 20px;
+    min-height: calc(100vh - 60px); /* Ensure enough space for content above footer */
 }
 
 section {
