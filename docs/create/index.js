@@ -77,9 +77,6 @@ document.getElementById('create-request-button').addEventListener('click', () =>
     } else if (containsProfanity(usernameField.value) || containsProfanity(partnerField.value)) {
         messageText.textContent = 'Inappropriate language detected. Please revise your input.';
         messageText.style.color = 'red';
-    } else if (containsInvalidKeywords(usernameField.value) || containsInvalidKeywords(partnerField.value)) {
-        messageText.textContent = 'Invalid keywords detected. Please use allowed keywords like "tiktok", "twitch", or "stream".';
-        messageText.style.color = 'red';
     } else {
         // If all validations pass, send the request to the Discord webhook
         const messageContent = `New stream request:\nUsername: ${usernameField.value}\nStreaming with: ${partnerField.value}`;
