@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkunkEditor - Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 28px;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-info img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Blue glow */
+        }
+
+        .profile-info img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 255, 0.8); /* Stronger blue glow on hover */
+        }
+
+        .profile-info h2 {
+            margin: 0;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .profile-info p {
+            color: #666;
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        .profile-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .profile-links button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            min-width: 120px;
+        }
+
+        .profile-links button:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
+
+        .back-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html"><button class="back-button">Back to Users List</button></a>
+    <div class="container">
+        <h1>Profile: SkunkEditor</h1>
+        <div class="profile-info">
+            <img src="images/skunkplatform-coloured-bg.png" alt="Profile Picture of SkunkPlatform">
+            <h2>SkunkEditor</h2>
+            <p>Role: Admin & Posts</p>
+            <p>Joined: May, 28, 2024</p>
+            <p>Bio: SkunKEditor has an Video for Editors, Songs, and Video Clips. Is an Second Official for SkunkPlatform. Used for TikTok and CapCut Desktop.</p>
+        </div>
+        <div class="profile-links">
+            <button onclick="window.open('https://tiktok.com/@skunkeditor', '_blank');">TikTok</button>
+        </div>
+    </div>
+</body>
+</html>
