@@ -88,10 +88,10 @@ document.getElementById('create-request-button').addEventListener('click', () =>
         // Clear the input fields and message text
         usernameField.value = '';
         partnerField.value = '';
-        messageText.textContent = 'Request submitted successfully!';
-        messageText.style.color = 'green';
+        messageText.textContent = '✅ Request submitted successfully!';
+        messageText.style.color = '#00ff00';
 
         // Update the last request time
-        lastRequestTime = currentTime;
+        lastRequestTime = currentTime
     }
 });
