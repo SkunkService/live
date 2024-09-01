@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f0f0f0;
             margin: 0;
             padding: 20px;
         }
@@ -17,12 +17,14 @@
             margin: auto;
             background: #fff;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
 
         h1 {
             text-align: center;
             color: #333;
+            font-size: 28px;
         }
 
         .profile-info {
@@ -33,16 +35,22 @@
         }
 
         .profile-info img {
-            border-radius: 0%;
+            border-radius: 50%;
             width: 150px;
             height: 150px;
             object-fit: cover;
             margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-info img:hover {
+            transform: scale(1.05);
         }
 
         .profile-info h2 {
             margin: 0;
             color: #333;
+            font-size: 24px;
         }
 
         .profile-info p {
@@ -51,27 +59,54 @@
             text-align: center;
         }
 
-        .profile-links a {
-            display: inline-block;
+        .profile-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .profile-links button {
             margin: 10px;
             padding: 10px 20px;
             background-color: #333;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            min-width: 120px;
         }
 
-        .profile-links a:hover {
+        .profile-links button:hover {
             background-color: #555;
+            transform: scale(1.05);
+        }
+
+        .back-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-    <a href="index.html"><button>Back to Users List</button></a>
+    <a href="index.html"><button class="back-button">Back to Users List</button></a>
     <div class="container">
         <h1>Profile: SkunkPlatform</h1>
         <div class="profile-info">
-            <img src="images/skunkplatform.png" alt="Profile Picture">
+            <img src="images/skunkplatform-coloured-bg.png" alt="Profile Picture of SkunkPlatform">
             <h2>SkunkPlatform</h2>
             <p>Role: Creator</p>
             <p>Joined: February 2024</p>
