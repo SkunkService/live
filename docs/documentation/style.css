@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    padding-bottom: 50px; /* Add padding to accommodate footer */
 }
 
 header {
@@ -45,4 +46,5 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+    left: 0;
 }
