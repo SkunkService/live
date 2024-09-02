@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkunkPlatform - Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -101,6 +102,43 @@
             background-color: #0056b3;
             transform: scale(1.05);
         }
+
+        .flag {
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+            margin: 5px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #333;
+            position: relative; /* Position relative for tooltip positioning */
+            overflow: hidden;
+        }
+
+        .flag i {
+            margin-right: 5px;
+            font-size: 16px; /* Adjust icon size */
+        }
+
+        .tooltip {
+            display: none; /* Hide tooltip by default */
+            position: absolute;
+            bottom: 100%; /* Position above the flag */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 3px;
+            white-space: nowrap;
+            z-index: 10;
+            font-size: 12px;
+        }
+
+        .flag:hover .tooltip {
+            display: block; /* Show tooltip on hover */
+        }
     </style>
 </head>
 <body>
@@ -108,7 +146,8 @@
     <div class="container">
         <h1>Profile: SkunkPlatform</h1>
         <div class="profile-info">
-            <img src="images/skunkplatform-coloured-bg.png" alt="Profile Picture of SkunkPlatform">
+            <div id="flags"></div>
+            <img src="https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/cbf2dfb21c4c1413d829385e378d9b43~c5_1080x1080.jpeg?lk3s=a5d48078&nonce=89412&refresh_token=3959917818b3a8021b064c3b2b296d90&x-expires=1725408000&x-signature=GYO%2Btqe9S7%2FOX6itAHL2k04QAJY%3D&shp=a5d48078&shcp=81f88b70" alt="Profile Picture of SkunkPlatform">
             <h2>SkunkPlatform</h2>
             <p>Role: Creator</p>
             <p>Joined: February 2024</p>
@@ -123,5 +162,47 @@
             <button onclick="window.open('https://linktr.ee/skunkplatform', '_blank');">Link Tree</button>
         </div>
     </div>
+    <script>
+        // Example flags data with icons and tooltips
+        const flags = [
+            { text: 'Creator', icon: 'fa-star', tooltip: 'Main creator of the SkunkApp' },
+            { text: 'Administrator', icon: 'fa-user-shield', tooltip: 'Manages overall platform settings' },
+            { text: 'Lead Developer', icon: 'fa-code', tooltip: 'Oversees development and updates' }
+        ];
+
+        // Function to render flags with tooltips
+        function renderFlags() {
+            const flagsContainer = document.getElementById('flags');
+            if (flags.length > 0) {
+                flags.forEach(flag => {
+                    const flagElement = document.createElement('span');
+                    flagElement.className = 'flag';
+                    
+                    // Create icon element
+                    const iconElement = document.createElement('i');
+                    iconElement.className = `fas ${flag.icon}`;
+                    flagElement.appendChild(iconElement);
+
+                    // Create text element
+                    const textElement = document.createElement('span');
+                    textElement.textContent = ` ${flag.text}`;
+                    flagElement.appendChild(textElement);
+
+                    // Create tooltip element
+                    const tooltipElement = document.createElement('div');
+                    tooltipElement.className = 'tooltip';
+                    tooltipElement.textContent = flag.tooltip;
+                    flagElement.appendChild(tooltipElement);
+
+                    flagsContainer.appendChild(flagElement);
+                });
+            } else {
+                flagsContainer.textContent = 'No flags available.';
+            }
+        }
+
+        // Call function on page load
+        window.onload = renderFlags;
+    </script>
 </body>
 </html>
