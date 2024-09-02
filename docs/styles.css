@@ -145,3 +145,12 @@ header nav a:hover {
 .rules-container ul li {
     margin-bottom: 10px;
 }
+
+.alert-box {
+    display: none; /* Oculto por defecto */
+    background-color: #f44336; /* Rojo */
+    color: white;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 5px;
+}
