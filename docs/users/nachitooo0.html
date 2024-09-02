@@ -99,6 +99,43 @@
             background-color: #0056b3;
             transform: scale(1.05);
         }
+
+        .flag {
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+            margin: 5px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flag i {
+            margin-right: 5px;
+            font-size: 16px;
+        }
+
+        .tooltip {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 3px;
+            white-space: nowrap;
+            z-index: 10;
+            font-size: 12px;
+        }
+
+        .flag:hover .tooltip {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -106,6 +143,7 @@
     <div class="container">
         <h1>Profile: Nachitoo!</h1>
         <div class="profile-info">
+            <div id="flags"></div>
             <img src="https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/afdb0fb98c637b82eee933d7797cb7f7~c5_1080x1080.jpeg?lk3s=a5d48078&nonce=80968&refresh_token=5aa7bdd1e04c7e4abade69c859b85d9e&x-expires=1725382800&x-signature=z815qAPGXsr5jdBAd9iDUVwkd8Q%3D&shp=a5d48078&shcp=81f88b70" alt="Profile Picture of Nachitoo!">
             <h2>Nachitoo!</h2>
             <p>Role: Streamer</p>
@@ -117,5 +155,46 @@
             <button onclick="window.open('https://discord.com/users/547425827550396417', '_blank');">Discord Profile</button>
         </div>
     </div>
+    <script>
+        // Example flags data with icons and tooltips
+        const flags = [
+            { text: 'Top Streamer', icon: 'fa-trophy', tooltip: 'Highly ranked streamer' },
+            { text: 'Community Leader', icon: 'fa-users', tooltip: 'Engages with the community regularly' }
+        ];
+
+        // Function to render flags with tooltips
+        function renderFlags() {
+            const flagsContainer = document.getElementById('flags');
+            if (flags.length > 0) {
+                flags.forEach(flag => {
+                    const flagElement = document.createElement('span');
+                    flagElement.className = 'flag';
+                    
+                    // Create icon element
+                    const iconElement = document.createElement('i');
+                    iconElement.className = `fas ${flag.icon}`;
+                    flagElement.appendChild(iconElement);
+
+                    // Create text element
+                    const textElement = document.createElement('span');
+                    textElement.textContent = ` ${flag.text}`;
+                    flagElement.appendChild(textElement);
+
+                    // Create tooltip element
+                    const tooltipElement = document.createElement('div');
+                    tooltipElement.className = 'tooltip';
+                    tooltipElement.textContent = flag.tooltip;
+                    flagElement.appendChild(tooltipElement);
+
+                    flagsContainer.appendChild(flagElement);
+                });
+            } else {
+                flagsContainer.textContent = 'No flags available.';
+            }
+        }
+
+        // Call function on page load
+        window.onload = renderFlags;
+    </script>
 </body>
 </html>
