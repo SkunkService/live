@@ -65,8 +65,8 @@ document.getElementById('create-request-button').addEventListener('click', () =>
     }
 
     const emailPattern = /^(.+)@(.+)\..+$/;
-    if (emailPattern.test(usernameField.value)) {
-      messageText.textContent = '🚫✉️ Emails are not allowed in Stream Request.';
+    if (emailPattern.test(usernameField.value) || emailPattern.test(partnerField.value)) {
+      messageText.textContent = '✉️ Emails are not allowed in Stream Request (Username or Partner).';
       messageText.style.color = 'red';
       return;
     }
