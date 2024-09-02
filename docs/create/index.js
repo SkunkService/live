@@ -64,6 +64,13 @@ document.getElementById('create-request-button').addEventListener('click', () =>
         return;
     }
 
+    const emailPattern = /^(.+)@(.+)\..+$/;
+    if (emailPattern.test(usernameField.value)) {
+      messageText.textContent = 'Emails are not allowed in usernames.';
+      messageText.style.color = 'red';
+      return;
+    }
+
     // Validation for empty fields and profanity
     if (usernameField.value.trim() === '' || partnerField.value.trim() === '') {
         messageText.textContent = 'Please fill in both fields.';
