@@ -52,21 +52,21 @@ document.getElementById('create-request-button').addEventListener('click', () =>
     // Anti-Link Validation: Check if the input contains a URL
     const urlPattern = /https?:\/\/[^\s]+/;
     if (urlPattern.test(usernameField.value) || urlPattern.test(partnerField.value)) {
-        messageText.textContent = 'Links are not allowed in the request.';
+        messageText.textContent = '❌📎 Links are not allowed in the request.';
         messageText.style.color = 'red';
         return;
     }
 
     // Anti-Spam Validation: Check if the request is made too frequently
     if (currentTime - lastRequestTime < REQUEST_INTERVAL) {
-        messageText.textContent = 'Please wait a moment before making another request.';
+        messageText.textContent = '🛑 Please wait a moment before making another request.';
         messageText.style.color = 'red';
         return;
     }
 
     const emailPattern = /^(.+)@(.+)\..+$/;
     if (emailPattern.test(usernameField.value)) {
-      messageText.textContent = 'Emails are not allowed in usernames.';
+      messageText.textContent = '🚫✉️ Emails are not allowed in Stream Request.';
       messageText.style.color = 'red';
       return;
     }
