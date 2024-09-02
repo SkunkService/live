@@ -12,3 +12,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+console.log("Warning: The Stream List Restricted is not allowed for use. It will takes for violate that the SkunkService's Guildelines. Do not attempt this Restriction.");
