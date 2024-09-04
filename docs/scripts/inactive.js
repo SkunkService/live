@@ -2,7 +2,7 @@ let inactivityTime = 30000; // Time in milliseconds (30 seconds)
 let inactivityTimer;
 
 // Function to show inactivity alert with dynamic content
-function showAlert(title, message) {
+function showAlertI(title, message) {
     const alertBox = document.getElementById('alert');
     const blackBg = document.getElementById('black-bg');
     const alertTitle = document.getElementById('alert-title');
@@ -15,28 +15,18 @@ function showAlert(title, message) {
     // Show the alert and the black background
     blackBg.style.display = 'flex';
     alertBox.style.display = 'block';
+    const accept = document.getElementById("accept");
+
+    accept.hidden = true;
 }
-
-// Function to hide the alert
-function hideAlert() {
-    const blackBg = document.getElementById('black-bg');
-    const alertBox = document.getElementById('alert');
-
-    // Hide the alert and the black background
-    blackBg.style.display = 'none';
-    alertBox.style.display = 'none';
-}
-
-// Event listener to hide the alert when the 'OK' button is clicked
-document.getElementById('accept').addEventListener('click', hideAlert);
 
 // Function to reset the inactivity timer
 function resetInactivityTimer() {
     clearTimeout(inactivityTimer);
     inactivityTimer = setTimeout(() => {
-        showAlert(
+        showAlertI(
             'Inactive Detected',
-            'You have been inactive for too long!<br>Press OK if you want to continue this.' // <br> or \n
+            'You have been inactive for too long!<br>Restart your Website to Continue.' // <br> or \n
         );
     }, inactivityTime); // Start inactivity timer
 }
