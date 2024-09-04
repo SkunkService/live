@@ -20,6 +20,3 @@ document.getElementById('accept').addEventListener('click', () => {
     blackBg.style.display = 'none';
     alertBox.style.display = 'none';
 });
-
-// Call showAlert function where needed
-showAlert('Warning', 'You need to Block that the Pop-Out might be taken for null using in URL: https://skunkservice.github.io/live/null.\n\nThis Stream List is Available for v1.12-VerStream.');
