@@ -11,9 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.open(url, '_blank');
         });
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
     const liveStreams = document.querySelectorAll('.live-stream');
 
