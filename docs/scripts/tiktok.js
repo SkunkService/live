@@ -16,7 +16,7 @@ document.getElementById('accept').addEventListener('click', () => {
         document.getElementById('accept').addEventListener('click', () => {
             blackBg.style.display = 'none';
             alertBox.style.display = 'none';
-        };
+        });
     }
 
     showAlert('Warning Pop-Out', 'You need to Block that the Pop-Out might be taken for null using in URL: https://skunkservice.github.io/live/null.');
