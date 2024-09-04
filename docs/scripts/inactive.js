@@ -1,4 +1,4 @@
-let inactivityTime = 30000; // Time in milliseconds (30 seconds)
+let inactivityTime = 60000; // Time in milliseconds (30 seconds)
 let inactivityTimer;
 
 // Function to show inactivity alert with dynamic content
