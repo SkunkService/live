@@ -26,7 +26,7 @@ function resetInactivityTimer() {
     inactivityTimer = setTimeout(() => {
         showAlertI(
             'Inactive Detected',
-            'You have been inactive for too long!<br>Restart your Website to Continue.' // <br> or \n
+            'You have been inactive for too long!\nRestart your Website to Continue.' // <br> or \n
         );
     }, inactivityTime); // Start inactivity timer
 }
