@@ -22,4 +22,4 @@ document.getElementById('accept').addEventListener('click', () => {
 });
 
 // Call showAlert function where needed
-showAlert('Warning Pop-Out', 'You need to Block that the Pop-Out might be taken for null using in URL: https://skunkservice.github.io/live/null.');
+showAlert('Warning', 'You need to Block that the Pop-Out might be taken for null using in URL: https://skunkservice.github.io/live/null.\n\nThis Stream List is Available for v1.12-VerStream.');
