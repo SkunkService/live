@@ -107,3 +107,28 @@ h1 {
         max-width: 100%;
     }
 }
+
+#termsofuse-message {
+    position: fixed; /* Fixes the element in place */
+    bottom: 10px;    /* Positions the element 10px from the bottom */
+    right: 10px;     /* Positions the element 10px from the right */
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;   /* Ensures it appears on top of other elements */
+}
+
+#termsofuse-message button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#termsofuse-message button:hover {
+    background-color: #218838;
+}
