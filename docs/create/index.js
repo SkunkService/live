@@ -93,3 +93,20 @@ document.getElementById('create-request-button').addEventListener('click', () =>
         lastRequestTime = currentTime
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const termsMessage = document.getElementById('termsofuse-message');
+    const agreeButton = document.getElementById('Agree');
+
+    // Check if the user has already agreed to the terms
+    if (localStorage.getItem('termsAccepted') === 'true') {
+        termsMessage.style.display = 'none'; // Hide terms message if already accepted
+    }
+
+    // Add event listener to the "I Agree" button
+    agreeButton.addEventListener('click', () => {
+        localStorage.setItem('termsAccepted', 'true'); // Store acceptance in local storage
+        termsMessage.style.display = 'none'; // Hide the terms of use message
+        alert('You have agreed to the Terms of Use.');
+    });
+});
