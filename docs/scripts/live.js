@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Handle profile streamer buttons
+    const openProfileStreamer = document.querySelectorAll('.profile-stream'); // Ensure these elements are clickable buttons
+
+    openProfileStreamer.forEach(button => {
+        button.addEventListener('click', () => {
+            let username = button.getAttribute('username');
+            if (username) {
+                window.open(`https://skunkservice.github.io/live/users/${username}/`, '_blank');
+            } else {
+                console.error('Username attribute is missing for button:', button);
+            }
+        });
+    });
+
     // Select all buttons with the class 'live-button'
     const buttons = document.querySelectorAll('.live-button');
 
