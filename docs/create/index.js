@@ -42,6 +42,8 @@ function sendToDiscordWebhook(embedTitle, embedDescription, embedColor) {
     });
 }
 
+console.log("[GITHUB PAGES LOADER]: This Website is still Loading.");
+
 document.addEventListener('DOMContentLoaded', () => {
     const createRequestButton = document.getElementById('create-request-button');
     const termsMessage = document.getElementById('termsofuse-message');
@@ -113,4 +115,5 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('You have agreed to the Terms of Use.');
         });
     }
+    console.log("[GITHUB PAGES LOADER]: This Website has been Loaded");
 });
