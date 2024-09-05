@@ -48,14 +48,18 @@ h1 {
     background-color: #0056b3;
 }
 
-/* Create Request Stream Section Styles */
+/* Center the div horizontally and vertically */
 #create-request-stream {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     max-width: 500px;
-    margin: 20px auto;
+    margin: auto; /* Center horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center vertically */
     text-align: center;
 }
 
