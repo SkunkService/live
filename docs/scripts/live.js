@@ -12,23 +12,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Select all buttons with IDs starting with 'nastream-button'
+    const naButtons = document.querySelectorAll('[id^="nastream-button"]');
+
+    // Add click event listener to each 'nastream-button'
+    naButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            showAlert("Stream is Not Available.", "You are trying to open a stream. This stream is invalid for Username.");
+        });
+    });
+
     const searchInput = document.getElementById('searchInput');
     const liveStreams = document.querySelectorAll('.live-stream');
 
-    searchInput.addEventListener('input', () => {
-        const query = searchInput.value.toLowerCase();
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase();
 
-        liveStreams.forEach(stream => {
-            const title = stream.querySelector('h2').textContent.toLowerCase();
-            const description = stream.querySelector('p').textContent.toLowerCase();
+            liveStreams.forEach(stream => {
+                const title = stream.querySelector('h2') ? stream.querySelector('h2').textContent.toLowerCase() : '';
+                const description = stream.querySelector('p') ? stream.querySelector('p').textContent.toLowerCase() : '';
 
-            if (title.includes(query) || description.includes(query)) {
-                stream.style.display = '';
-            } else {
-                stream.style.display = 'none';
-            }
+                if (title.includes(query) || description.includes(query)) {
+                    stream.style.display = '';
+                } else {
+                    stream.style.display = 'none';
+                }
+            });
         });
-    });
+    }
+
+    console.log("Warning: The Stream List Restricted is not allowed for use. This may violate SkunkService's guidelines. Do not attempt this restriction.");
 });
 
 console.log("Warning: The Stream List Restricted is not allowed for use. It will takes for violate that the SkunkService's Guildelines. Do not attempt this Restriction.");
