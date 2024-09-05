@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             let username = button.getAttribute('username');
             if (username) {
-                window.open(`https://skunkservice.github.io/live/users/${username}/`, '_blank');
+                window.open(`https://skunkservice.github.io/live/users/${username}`, '_blank');
             } else {
                 console.error('Username attribute is missing for button:', button);
             }
