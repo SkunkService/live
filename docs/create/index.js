@@ -10,7 +10,7 @@ const containsProfanity = (text) => {
 
 // Function to send an embedded message to a Discord webhook
 function sendToDiscordWebhook(embedTitle, embedDescription, embedColor) {
-    const webhookURL = 'https://discord.com/api/webhooks/1251445860252913675/AhDR5MEFVKeCwxKWCH3EDQpOK4IKgR6B2lMY7FCSHZWNmoAiOCHPLvTw9UMw6ymPx1zD'; // Replace with your webhook URL
+    const webhookURL = 'https://discord.com/api/webhooks/1283091359452106783/5Bf6ZZRibkubPswNcnLvIAeVz07QJWjWVGENc-aA5Mo71bosbqhejLg53MMzhY04jlvs'; // Replace with your webhook URL
 
     const payload = {
         embeds: [
