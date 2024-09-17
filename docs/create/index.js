@@ -4,7 +4,7 @@ let lastRequestTime = 0;
 
 // Profanity filter
 const containsProfanity = (text) => {
-    const profaneWords = ['ez', 'nuv', 'pito', 'mierda', 'mrd', 'puto', 'puta', 'gassy', 'fuck', 'pene', 'pete'];
+    const profaneWords = ['ez', 'nuv', 'pito', 'mierda', 'mrd', 'puto', 'puta', 'gassy', 'fuck', 'pene', 'pete', 'sex', 'nsfw', 'sfw'];
     return profaneWords.some(word => text.toLowerCase().includes(word));
 };
 
