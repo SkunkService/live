@@ -52,7 +52,9 @@ document.onscroll = resetInactivityTimer;
         if (widthThreshold || heightThreshold) {
             if (!isConsoleOpen) {
                 isConsoleOpen = true;
-                showAlertI('DevTools Detected', 'The DevTools is Open. The Console will violate our SkunkService\'s Promises Guidelines. This Website is Protected to Avoid the Console\'s DevTools.');
+                docuemnt.body.innerHTML=`<div class="container"><h1>You are using the DevTools!</h1>
+                <p>Why the Website SkunkService LIVE Stream is Protected?</p>
+                <p>The SkunkService is Protected the Website for LIVE. The DevTools using Console will violate the SkunkService's Promises of the Community Guidelines and Terms of Use. Keeping Safe of the Website.</p></div>`;
             }
         } else {
             isConsoleOpen = false;
