@@ -53,7 +53,7 @@ document.onscroll = resetInactivityTimer;
         if (widthThreshold || heightThreshold) {
             if (!isConsoleOpen) {
                 isConsoleOpen = true;
-                docuemnt.body.innerHTML=`<div class="container"><h1>You are using the DevTools!</h1>
+                document.body.innerHTML=`<div class="container"><h1>You are using the DevTools!</h1>
                 <p>Why the Website SkunkService LIVE Stream is Protected?</p>
                 <p>The SkunkService is Protected the Website for LIVE. The DevTools using Console will violate the SkunkService's Promises of the Community Guidelines and Terms of Use. Keeping Safe of the Website.</p></div>`;
             }
