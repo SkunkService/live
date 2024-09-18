@@ -52,7 +52,7 @@ document.onscroll = resetInactivityTimer;
         if (widthThreshold || heightThreshold) {
             if (!isConsoleOpen) {
                 isConsoleOpen = true;
-                showAlertI('Console Detected', 'The console is open. This may indicate an attempt to tamper with the page. The Console will violate our SkunkService\'s Promises Guidelines');
+                showAlertI('DevTools Detected', 'The DevTools is Open. The Console will violate our SkunkService\'s Promises Guidelines. This Website is Protected to Avoid the Console\'s DevTools.');
             }
         } else {
             isConsoleOpen = false;
