@@ -1,4 +1,4 @@
-let inactivityTime = 60000; // Time in milliseconds (30 seconds)
+let inactivityTime = 120000; // Time in milliseconds (30 seconds)
 let inactivityTimer;
 
 // Function to show inactivity alert with dynamic content
@@ -13,11 +13,13 @@ function showAlertI(title, message) {
     alertBody.textContent = message;
 
     // Show the alert and the black background
-    blackBg.style.display = 'flex';
-    alertBox.style.display = 'block';
+    setInterval(()=>{
+        blackBg.style.display = 'flex';
+        alertBox.style.display = 'block';
+    }, 1);
     const accept = document.getElementById("accept");
 
-    accept.hidden = true;
+    setInterval(() => {accept.hidden = true}, 1);
 }
 
 // Function to reset the inactivity timer
@@ -37,3 +39,23 @@ document.onmousemove = resetInactivityTimer;
 document.onkeydown = resetInactivityTimer;
 document.onclick = resetInactivityTimer;
 document.onscroll = resetInactivityTimer;
+
+(function() {
+    let isConsoleOpen = false;
+    const threshold = 160;
+
+    function detectConsole() {
+        const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+        const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+        if (widthThreshold || heightThreshold) {
+            if (!isConsoleOpen) {
+                isConsoleOpen = true;
+                showAlertI('Console Detected', 'The console is open. This may indicate an attempt to tamper with the page. The Console will violate our SkunkService\'s Promises Guidelines');
+            }
+        } else {
+            isConsoleOpen = false;
+        }
+    }
+
+    setInterval(detectConsole, 1000); // Check every second
+})();
