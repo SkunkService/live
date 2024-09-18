@@ -16,6 +16,8 @@ function showAlertI(title, message) {
     setInterval(()=>{
         blackBg.style.display = 'flex';
         alertBox.style.display = 'block';
+        alertBox.hidden = false;
+        blackBg.hidden = false;
     }, 1);
     const accept = document.getElementById("accept");
 
