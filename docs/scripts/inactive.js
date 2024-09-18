@@ -47,6 +47,7 @@ document.onscroll = resetInactivityTimer;
     const threshold = 160;
 
     function detectConsole() {
+        console.log("[VIOLATION]: The DevTools you are trying to Open the Console. The DevTools using Console will violate the SkunkService's Promises of the Community Guidelines.");
         const widthThreshold = window.outerWidth - window.innerWidth > threshold;
         const heightThreshold = window.outerHeight - window.innerHeight > threshold;
         if (widthThreshold || heightThreshold) {
@@ -61,5 +62,5 @@ document.onscroll = resetInactivityTimer;
         }
     }
 
-    setInterval(detectConsole, 1000); // Check every second
+    setInterval(detectConsole, 100); // Check every second
 })();
