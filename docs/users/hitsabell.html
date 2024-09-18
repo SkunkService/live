@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dechillgd - Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 28px;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-info img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-info img:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-info h2 {
+            margin: 0;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .profile-info p {
+            color: #666;
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        .profile-links button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .profile-links button:hover {
+            background-color: #555;
+        }
+
+        .back-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Styles for flags and tooltips */
+        .flag {
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+            margin: 5px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flag i {
+            margin-right: 5px;
+            font-size: 16px;
+        }
+
+        .tooltip {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 3px;
+            white-space: nowrap;
+            z-index: 10;
+            font-size: 12px;
+        }
+
+        .flag:hover .tooltip {
+            display: block;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <a href="index.html"><button class="back-button">Back to Users List</button></a>
+    <div class="container">
+        <h1>Profile: Annabelle 花</h1>
+        <div class="profile-info">
+            <div id="flags"></div>
+            <img src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/02aef674eccc5df5e93cc3ecc2823433~c5_720x720.jpeg?lk3s=a5d48078&nonce=31358&refresh_token=6b5905c30609827dce0e6f395ce92b54&x-expires=1726837200&x-signature=A%2F6EZy%2FxsOcRyEkH%2BbOvJPdEf14%3D&shp=a5d48078&shcp=81f88b70" alt="Profile Picture of dechillgd">
+            <h2>Annabelle 花</h2>
+            <p>Role: Streamer & Videos</p>
+            <p>Joined: March 2022</p>
+            <p>Bio:<br>English streamer!<br>Stream GTA V everyday<br>Please turn on your notifications 🫡</p>
+        </div>
+        <div class="profile-links">
+            <button onclick="window.open('https://www.tiktok.com/@hiitsabell', '_blank');">TikTok</button>
+            <button onclick="window.open('https://linktr.ee/AnnabellePocket', '_blank');">Linktree</button>
+        </div>
+    </div>
+    <script>
+        // Example flags data with icons and tooltips for dechillgd
+        const flags = [
+            { text: 'Top Streamer', icon: 'fa-trophy', tooltip: 'Recognized for outstanding streaming' },
+            { text: 'Videos Content', icon: 'fa-video', tooltip: 'Videos Content' }
+        ];
+
+        // Function to render flags with tooltips
+        function renderFlags() {
+            const flagsContainer = document.getElementById('flags');
+            if (flags.length > 0) {
+                flags.forEach(flag => {
+                    const flagElement = document.createElement('span');
+                    flagElement.className = 'flag';
+                    
+                    // Create icon element
+                    const iconElement = document.createElement('i');
+                    iconElement.className = `fas ${flag.icon}`;
+                    flagElement.appendChild(iconElement);
+
+                    // Create text element
+                    const textElement = document.createElement('span');
+                    textElement.textContent = ` ${flag.text}`;
+                    flagElement.appendChild(textElement);
+
+                    // Create tooltip element
+                    const tooltipElement = document.createElement('div');
+                    tooltipElement.className = 'tooltip';
+                    tooltipElement.textContent = flag.tooltip;
+                    flagElement.appendChild(tooltipElement);
+
+                    flagsContainer.appendChild(flagElement);
+                });
+            } else {
+                flagsContainer.textContent = 'No flags available.';
+            }
+        }
+
+        // Call function on page load
+        window.onload = renderFlags;
+    </script>
+</body>
+</html>
