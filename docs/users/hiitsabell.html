@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dechillgd - Profile</title>
+    <title>Annabelle 花 - Profile</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -89,7 +89,6 @@
             background-color: #0056b3;
         }
 
-        /* Styles for flags and tooltips */
         .flag {
             display: flex;
             align-items: center;
@@ -135,11 +134,11 @@
         <h1>Profile: Annabelle 花</h1>
         <div class="profile-info">
             <div id="flags"></div>
-            <img src="images/hiitsabell.jpeg" alt="Profile Picture of hitsabell">
+            <img src="images/annabelle.jpeg" alt="Profile Picture of Annabelle">
             <h2>Annabelle 花</h2>
             <p>Role: Streamer & Videos</p>
             <p>Joined: March 2022</p>
-            <p>Bio:<br>English streamer!<br>Stream GTA V everyday<br>Please turn on your notifications 🫡</p>
+            <p>Bio:<br>English streamer!<br>Stream GTA V every day<br>Please turn on your notifications 🫡</p>
         </div>
         <div class="profile-links">
             <button onclick="window.open('https://www.tiktok.com/@hiitsabell', '_blank');">TikTok</button>
@@ -147,13 +146,11 @@
         </div>
     </div>
     <script>
-        // Example flags data with icons and tooltips for dechillgd
         const flags = [
             { text: 'Top Streamer', icon: 'fa-trophy', tooltip: 'Recognized for outstanding streaming' },
             { text: 'Videos Content', icon: 'fa-video', tooltip: 'Videos Content' }
         ];
 
-        // Function to render flags with tooltips
         function renderFlags() {
             const flagsContainer = document.getElementById('flags');
             if (flags.length > 0) {
@@ -161,17 +158,14 @@
                     const flagElement = document.createElement('span');
                     flagElement.className = 'flag';
                     
-                    // Create icon element
                     const iconElement = document.createElement('i');
                     iconElement.className = `fas ${flag.icon}`;
                     flagElement.appendChild(iconElement);
 
-                    // Create text element
                     const textElement = document.createElement('span');
                     textElement.textContent = ` ${flag.text}`;
                     flagElement.appendChild(textElement);
 
-                    // Create tooltip element
                     const tooltipElement = document.createElement('div');
                     tooltipElement.className = 'tooltip';
                     tooltipElement.textContent = flag.tooltip;
@@ -184,7 +178,6 @@
             }
         }
 
-        // Call function on page load
         window.onload = renderFlags;
     </script>
 </body>
