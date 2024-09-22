@@ -4,7 +4,7 @@ function showModal(title, message) {
     document.getElementById('msg').innerText = message;
 
     // Play sound from the Dropbox URL
-    const audio = new Audio('https://www.dropbox.com/scl/fi/9iwxpc58j3yr49b8j5oxb/new-message-31-183617.mp3?raw=1');
+    const audio = new Audio('https://www.dropbox.com/scl/fi/9iwxpc58j3yr49b8j5oxb/new-message-31-183617.mp3?rlkey=wwevfntsj7pqs22eth3heszy6&st=v9ixmtu5&dl=0');
     audio.play().catch(error => {
         console.error('Audio playback failed:', error);
     });
