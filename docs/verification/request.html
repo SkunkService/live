@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Verification Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .btn {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .success {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+        }
+        .error {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Discord Verification Request</h1>
+        <p>Fill out the information below to send a verification request directly to Discord via a webhook.</p>
+        
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your username">
+
+        <label for="followerCount">Follower Count:</label>
+        <input type="number" id="followerCount" min="10000" placeholder="Must be 10K or more">
+
+        <label for="accountAge">Account Age:</label>
+        <input type="number" id="accountAge" min="17" max="19" placeholder="Must be 17, 18, or 19">
+
+        <label for="additionalInfo">Additional Information:</label>
+        <textarea id="additionalInfo" placeholder="Any additional notes or details..."></textarea>
+
+        <button class="btn" onclick="sendToWebhook()">Submit Request</button>
+
+        <div id="response" class="success" style="display: none;">Your verification request has been sent!</div>
+        <div id="responseError" class="error" style="display: none;">Error: Could not send the request. Please try again.</div>
+    </div>
+
+    <script>
+        // Replace with your actual Discord webhook URL
+        const webhookURL = 'https://discord.com/api/webhooks/1291371309938380915/GlyrMl7JFv3ioSkCqQMS7MKDhfuhBJzz9YQWQFk5KmCq5qiVRYQbxTeThciWArqiLkWc';
+
+        function sendToWebhook() {
+            const username = document.getElementById('username').value;
+            const followerCount = document.getElementById('followerCount').value;
+            const accountAge = document.getElementById('accountAge').value;
+            const additionalInfo = document.getElementById('additionalInfo').value;
+
+            // Basic validation checks
+            if (!username || !followerCount || !accountAge) {
+                document.getElementById('responseError').innerText = "Please fill out all required fields.";
+                document.getElementById('responseError').style.display = 'block';
+                return;
+            }
+
+            // Create the message content
+            const messageContent = `
+**Verification Request**
+
+**Username:** ${username}
+**Follower Count:** ${followerCount}
+**Account Age:** ${accountAge} years
+
+**Additional Information:**
+${additionalInfo || "N/A"}
+
+_Request sent for verification approval._
+            `;
+
+            // Prepare the data for the webhook
+            const requestBody = {
+                content: messageContent
+            };
+
+            // Send the request to the webhook using Fetch API
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestBody)
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('response').style.display = 'block';
+                    document.getElementById('responseError').style.display = 'none';
+                } else {
+                    throw new Error("Failed to send request.");
+                }
+            })
+            .catch(error => {
+                document.getElementById('responseError').innerText = `Error: ${error.message}`;
+                document.getElementById('responseError').style.display = 'block';
+                document.getElementById('response').style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
