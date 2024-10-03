@@ -98,11 +98,13 @@
         // Replace with your actual Discord webhook URL
         const webhookURL = 'https://discord.com/api/webhooks/1291371309938380915/GlyrMl7JFv3ioSkCqQMS7MKDhfuhBJzz9YQWQFk5KmCq5qiVRYQbxTeThciWArqiLkWc';
 
+        let lastSubmissionTime = 0; // To track the last submission time
+
         function sendToWebhook() {
-            const username = document.getElementById('username').value;
+            const username = document.getElementById('username').value.trim();
             const followerCount = document.getElementById('followerCount').value;
             const accountAge = document.getElementById('accountAge').value;
-            const additionalInfo = document.getElementById('additionalInfo').value;
+            const additionalInfo = document.getElementById('additionalInfo').value.trim();
 
             // Basic validation checks
             if (!username || !followerCount || !accountAge) {
@@ -110,6 +112,31 @@
                 document.getElementById('responseError').style.display = 'block';
                 return;
             }
+
+            // Anti-link check
+            const urlPattern = /(https?:\/\/[^\s]+)/g;
+            if (urlPattern.test(username) || urlPattern.test(additionalInfo)) {
+                document.getElementById('responseError').innerText = "Links are not allowed in the input.";
+                document.getElementById('responseError').style.display = 'block';
+                return;
+            }
+
+            // Anti-email check
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailPattern.test(username) || emailPattern.test(additionalInfo)) {
+                document.getElementById('responseError').innerText = "Email addresses are not allowed.";
+                document.getElementById('responseError').style.display = 'block';
+                return;
+            }
+
+            // Anti-spam check (e.g., prevent submissions within 10 seconds)
+            const currentTime = Date.now();
+            if (currentTime - lastSubmissionTime < 10000) {
+                document.getElementById('responseError').innerText = "Please wait before submitting again.";
+                document.getElementById('responseError').style.display = 'block';
+                return;
+            }
+            lastSubmissionTime = currentTime;
 
             // Create the message content
             const messageContent = `
@@ -122,8 +149,7 @@
 **Additional Information:**
 ${additionalInfo || "N/A"}
 
-_Request sent for verification approval._
-            `;
+_Request sent for verification approval._`;
 
             // Prepare the data for the webhook
             const requestBody = {
