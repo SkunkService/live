@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Page - SkunkStream</title>
+    <link rel="icon" href="../live.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .content-section {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verification Portal</h1>
+    
+    <!-- Navigation Links -->
+    <nav>
+        <a href="request" target="contentFrame">Request Verification (Language Supported)</a>
+        <a href="info" target="contentFrame">Information</a>
+        <a href="info-es" target="contentFrame">Información (Español)</a>
+        <a href="info-pt" target="contentFrame">Informação (Português)</a>
+        <a href="info-ch" target="contentFrame">Information (中文)</a>
+        <a href="info-fr" target="contentFrame">Information (Français)</a>
+    </nav>
+    
+    <!-- Iframe Container -->
+    <div class="content-section">
+        <iframe name="contentFrame" src="request" style="width: 100%; height: 600px; border: none;"></iframe>
+    </div>
+    
+</body>
+</html>
