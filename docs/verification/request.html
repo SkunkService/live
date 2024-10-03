@@ -73,28 +73,77 @@
 </head>
 <body>
     <div class="container">
-        <h1>Verification Request</h1>
-        <p>Fill out the information below to send a verification request.</p>
+        <h1 id="title">Verification Request</h1>
+        <p id="description">Fill out the information below to send a verification request.</p>
         
-        <label for="username">Username:</label>
+        <label for="username" id="labelUsername">Username:</label>
         <input type="text" id="username" placeholder="Enter your username">
 
-        <label for="followerCount">Follower Count:</label>
+        <label for="followerCount" id="labelFollowerCount">Follower Count:</label>
         <input type="number" id="followerCount" min="10000" placeholder="Must be 10K or more">
 
-        <label for="accountAge">Account Age:</label>
+        <label for="accountAge" id="labelAccountAge">Account Age:</label>
         <input type="number" id="accountAge" min="17" max="19" placeholder="Must be 17, 18, or 19">
 
-        <label for="additionalInfo">Additional Information:</label>
+        <label for="additionalInfo" id="labelAdditionalInfo">Additional Information:</label>
         <textarea id="additionalInfo" placeholder="Any additional notes or details..."></textarea>
 
         <button class="btn" onclick="sendToWebhook()">Submit Request</button>
 
-        <div id="response" class="success" style="display: none;">Your verification request has been sent!</div>
-        <div id="responseError" class="error" style="display: none;">Error: Could not send the request. Please try again.</div>
+        <div id="response" class="success" style="display: none;"></div>
+        <div id="responseError" class="error" style="display: none;"></div>
     </div>
 
     <script>
+        // Language content
+        const langContent = {
+            en: {
+                title: "Verification Request",
+                description: "Fill out the information below to send a verification request.",
+                labelUsername: "Username:",
+                labelFollowerCount: "Follower Count:",
+                labelAccountAge: "Account Age:",
+                labelAdditionalInfo: "Additional Information:",
+                successMessage: "Your verification request has been sent!",
+                errorMessage: "Error: Could not send the request. Please try again.",
+                placeholderFollowerCount: "Must be 10K or more",
+                placeholderAccountAge: "Must be 17, 18, or 19",
+                additionalInfoPlaceholder: "Any additional notes or details..."
+            },
+            es: {
+                title: "Solicitud de Verificación",
+                description: "Complete la información a continuación para enviar una solicitud de verificación.",
+                labelUsername: "Nombre de usuario:",
+                labelFollowerCount: "Cantidad de seguidores:",
+                labelAccountAge: "Edad de la cuenta:",
+                labelAdditionalInfo: "Información adicional:",
+                successMessage: "¡Su solicitud de verificación ha sido enviada!",
+                errorMessage: "Error: No se pudo enviar la solicitud. Inténtalo de nuevo.",
+                placeholderFollowerCount: "Debe ser 10K o más",
+                placeholderAccountAge: "Debe ser 17, 18 o 19",
+                additionalInfoPlaceholder: "Cualquier nota o detalle adicional..."
+            }
+            // You can add more languages here
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const lang = params.get('lang') || 'en'; // Default to English if no lang param is provided
+
+        function setLanguage() {
+            const content = langContent[lang] || langContent.en; // Fallback to English
+            document.getElementById('title').innerText = content.title;
+            document.getElementById('description').innerText = content.description;
+            document.getElementById('labelUsername').innerText = content.labelUsername;
+            document.getElementById('labelFollowerCount').innerText = content.labelFollowerCount;
+            document.getElementById('labelAccountAge').innerText = content.labelAccountAge;
+            document.getElementById('labelAdditionalInfo').innerText = content.labelAdditionalInfo;
+            document.getElementById('followerCount').placeholder = content.placeholderFollowerCount;
+            document.getElementById('accountAge').placeholder = content.placeholderAccountAge;
+            document.getElementById('additionalInfo').placeholder = content.additionalInfoPlaceholder;
+        }
+
+        setLanguage();
+
         // Replace with your actual Discord webhook URL
         const webhookURL = 'https://discord.com/api/webhooks/1291371309938380915/GlyrMl7JFv3ioSkCqQMS7MKDhfuhBJzz9YQWQFk5KmCq5qiVRYQbxTeThciWArqiLkWc';
 
@@ -166,6 +215,7 @@ _Request sent for verification approval._`;
             })
             .then(response => {
                 if (response.ok) {
+                    document.getElementById('response').innerText = langContent[lang].successMessage;
                     document.getElementById('response').style.display = 'block';
                     document.getElementById('responseError').style.display = 'none';
                 } else {
@@ -173,7 +223,7 @@ _Request sent for verification approval._`;
                 }
             })
             .catch(error => {
-                document.getElementById('responseError').innerText = `Error: ${error.message}`;
+                document.getElementById('responseError').innerText = langContent[lang].errorMessage;
                 document.getElementById('responseError').style.display = 'block';
                 document.getElementById('response').style.display = 'none';
             });
