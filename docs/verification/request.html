@@ -28,7 +28,7 @@
             margin-top: 10px;
             display: block;
         }
-        input, textarea {
+        input, textarea, select {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
@@ -75,7 +75,14 @@
     <div class="container">
         <h1 id="title">Verification Request</h1>
         <p id="description">Fill out the information below to send a verification request.</p>
-        
+
+        <label for="languageSelect">Select Language:</label>
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <!-- Puedes agregar más idiomas aquí -->
+        </select>
+
         <label for="username" id="labelUsername">Username:</label>
         <input type="text" id="username" placeholder="Enter your username">
 
@@ -95,7 +102,7 @@
     </div>
 
     <script>
-        // Language content
+        // Contenido del idioma
         const langContent = {
             en: {
                 title: "Verification Request",
@@ -123,14 +130,14 @@
                 placeholderAccountAge: "Debe ser 17, 18 o 19",
                 additionalInfoPlaceholder: "Cualquier nota o detalle adicional..."
             }
-            // You can add more languages here
+            // Puedes agregar más idiomas aquí
         };
 
-        const params = new URLSearchParams(window.location.search);
-        const lang = params.get('lang') || 'en'; // Default to English if no lang param is provided
+        const defaultLang = 'en';
+        let currentLang = defaultLang;
 
         function setLanguage() {
-            const content = langContent[lang] || langContent.en; // Fallback to English
+            const content = langContent[currentLang] || langContent[defaultLang]; // Revertir a inglés
             document.getElementById('title').innerText = content.title;
             document.getElementById('description').innerText = content.description;
             document.getElementById('labelUsername').innerText = content.labelUsername;
@@ -142,12 +149,18 @@
             document.getElementById('additionalInfo').placeholder = content.additionalInfoPlaceholder;
         }
 
+        function changeLanguage() {
+            currentLang = document.getElementById('languageSelect').value;
+            setLanguage();
+        }
+
+        // Llamar a la función para establecer el idioma predeterminado
         setLanguage();
 
-        // Replace with your actual Discord webhook URL
+        // Reemplaza con tu URL de webhook de Discord real
         const webhookURL = 'https://discord.com/api/webhooks/1291371309938380915/GlyrMl7JFv3ioSkCqQMS7MKDhfuhBJzz9YQWQFk5KmCq5qiVRYQbxTeThciWArqiLkWc';
 
-        let lastSubmissionTime = 0; // To track the last submission time
+        let lastSubmissionTime = 0; // Para rastrear el último tiempo de envío
 
         function sendToWebhook() {
             const username = document.getElementById('username').value.trim();
@@ -155,14 +168,14 @@
             const accountAge = document.getElementById('accountAge').value;
             const additionalInfo = document.getElementById('additionalInfo').value.trim();
 
-            // Basic validation checks
+            // Comprobaciones básicas de validación
             if (!username || !followerCount || !accountAge) {
                 document.getElementById('responseError').innerText = "Please fill out all required fields.";
                 document.getElementById('responseError').style.display = 'block';
                 return;
             }
 
-            // Anti-link check
+            // Comprobación de enlace
             const urlPattern = /(https?:\/\/[^\s]+)/g;
             if (urlPattern.test(username) || urlPattern.test(additionalInfo)) {
                 document.getElementById('responseError').innerText = "Links are not allowed in the input.";
@@ -170,7 +183,7 @@
                 return;
             }
 
-            // Anti-email check
+            // Comprobación de correo electrónico
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (emailPattern.test(username) || emailPattern.test(additionalInfo)) {
                 document.getElementById('responseError').innerText = "Email addresses are not allowed.";
@@ -178,7 +191,7 @@
                 return;
             }
 
-            // Anti-spam check (e.g., prevent submissions within 10 seconds)
+            // Comprobación de spam (por ejemplo, prevenir envíos dentro de 10 segundos)
             const currentTime = Date.now();
             if (currentTime - lastSubmissionTime < 10000) {
                 document.getElementById('responseError').innerText = "Please wait before submitting again.";
@@ -187,7 +200,7 @@
             }
             lastSubmissionTime = currentTime;
 
-            // Create the message content
+            // Crear el contenido del mensaje
             const messageContent = `
 **Verification Request**
 
@@ -200,12 +213,12 @@ ${additionalInfo || "N/A"}
 
 _Request sent for verification approval._`;
 
-            // Prepare the data for the webhook
+            // Preparar los datos para el webhook
             const requestBody = {
                 content: messageContent
             };
 
-            // Send the request to the webhook using Fetch API
+            // Enviar la solicitud al webhook utilizando Fetch API
             fetch(webhookURL, {
                 method: 'POST',
                 headers: {
@@ -215,15 +228,21 @@ _Request sent for verification approval._`;
             })
             .then(response => {
                 if (response.ok) {
-                    document.getElementById('response').innerText = langContent[lang].successMessage;
+                    document.getElementById('response').innerText = langContent[currentLang].successMessage;
                     document.getElementById('response').style.display = 'block';
                     document.getElementById('responseError').style.display = 'none';
+
+                    // Limpiar el formulario después de enviar
+                    document.getElementById('username').value = '';
+                    document.getElementById('followerCount').value = '';
+                    document.getElementById('accountAge').value = '';
+                    document.getElementById('additionalInfo').value = '';
                 } else {
                     throw new Error("Failed to send request.");
                 }
             })
             .catch(error => {
-                document.getElementById('responseError').innerText = langContent[lang].errorMessage;
+                document.getElementById('responseError').innerText = langContent[currentLang].errorMessage;
                 document.getElementById('responseError').style.display = 'block';
                 document.getElementById('response').style.display = 'none';
             });
