@@ -35,7 +35,7 @@
             margin-bottom: 20px;
         }
 
-        .profile-info img {
+        .profile-info img.user-icon {
             border-radius: 50%;
             width: 150px;
             height: 150px;
@@ -54,6 +54,15 @@
             margin: 0;
             color: #333;
             font-size: 24px;
+            display: flex;
+            align-items: center; /* Center content vertically */
+        }
+
+        .verified-icon {
+            width: 15px;
+            height: 15px;
+            margin-left: 5px;
+            vertical-align: middle;
         }
 
         .profile-info p {
@@ -147,8 +156,12 @@
         <h1>Profile: SkunkPlatform</h1>
         <div class="profile-info">
             <div id="flags"></div>
-            <img src="images/skunkplatform-coloured-bg.png" alt="Profile Picture of SkunkPlatform">
-            <h2>SkunkPlatform<img src="images/verified.png" alt="Indicates the Account is Verified" style="width:15px,height:15px"></h2>
+            <!-- Adding the .user-icon class to the image -->
+            <img src="images/skunkplatform-coloured-bg.png" alt="Profile Picture of SkunkPlatform" class="user-icon">
+            <h2>SkunkPlatform
+                <!-- Mini verified badge using CSS styling -->
+                <img src="images/verified.png" class="verified-icon" alt="Verified Badge">
+            </h2>
             <p>Role: Creator</p>
             <p>Joined: February 2024</p>
             <p>Bio: SkunkPlatform is the creator of the SkunkApp, an advanced tool for managing streaming communities.</p>
