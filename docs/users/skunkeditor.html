@@ -35,7 +35,7 @@
             margin-bottom: 20px;
         }
 
-        .profile-info img {
+        .profile-info img.user-icon {
             border-radius: 50%;
             width: 150px;
             height: 150px;
@@ -55,12 +55,12 @@
             color: #333;
             font-size: 24px;
             display: flex;
-            align-items: center;
+            align-items: center; /* Center content vertically */
         }
 
         .verified-icon {
-            width: 15px;
-            height: 15px;
+            width: 12px;  /* Smaller width for mini icon */
+            height: 12px; /* Smaller height for mini icon */
             margin-left: 5px;
             vertical-align: middle;
         }
@@ -156,9 +156,9 @@
         <h1>Profile: SkunkEditor</h1>
         <div class="profile-info">
             <div id="flags"></div>
-            <img src="images/skunkeditor.jpeg" alt="Profile Picture of SkunkEditor">
+            <img src="images/skunkeditor.jpeg" alt="Profile Picture of SkunkEditor" class="user-icon">
             <h2>SkunkEditor
-                <!-- Verified badge icon next to the profile name -->
+                <!-- Mini verified badge using CSS styling -->
                 <img src="images/verified2.png" class="verified-icon" alt="Verified Badge">
             </h2>
             <p>Role: Admin & Posts</p>
