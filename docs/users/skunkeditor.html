@@ -54,6 +54,15 @@
             margin: 0;
             color: #333;
             font-size: 24px;
+            display: flex;
+            align-items: center;
+        }
+
+        .verified-icon {
+            width: 15px;
+            height: 15px;
+            margin-left: 5px;
+            vertical-align: middle;
         }
 
         .profile-info p {
@@ -148,7 +157,10 @@
         <div class="profile-info">
             <div id="flags"></div>
             <img src="images/skunkeditor.jpeg" alt="Profile Picture of SkunkEditor">
-            <h2>SkunkEditor</h2>
+            <h2>SkunkEditor
+                <!-- Verified badge icon next to the profile name -->
+                <img src="images/verified2.png" class="verified-icon" alt="Verified Badge">
+            </h2>
             <p>Role: Admin & Posts</p>
             <p>Joined: May 28, 2024</p>
             <p>Bio: SkunkEditor has a video for Editors, Songs, and Video Clips. Is a second official for SkunkPlatform. Used for TikTok and CapCut Desktop.</p>
