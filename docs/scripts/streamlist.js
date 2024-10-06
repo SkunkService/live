@@ -91,9 +91,6 @@ Stream List Example:
 // Array to store the streams that are successfully added
 const existingStreams = [];
 
-// Array to store the streams that are successfully added
-const existingStreams = [];
-
 // Automatically create each stream in the list
 streamList.forEach(stream => {
     // Validate based on safety flags
