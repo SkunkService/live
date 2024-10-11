@@ -1,5 +1,5 @@
 // Array of bad words to filter out
-const badWords = ["fuck", "nigger", "nigga", "butt", "puto", "puta", "verga", "poronga", "pene", "pete", "polla", "mueranse", "muere", "morid", "muerte", "muerto", "loli"];
+const badWords = ["fuck", "nigger", "nigga", "butt", "puto", "puta", "verga", "poronga", "pene", "pete", "polla", "mueranse", "muere", "morid", "muerte", "muerto", "loli", "mueranse", "n1gg4", "nigg4", "n1gga","n!gga","n!gg4","n!gg3r","n1gg3r","n1gger","nigg3r","n!gger","kill"];
 
 // Safety by Word Filters for Streaming List Security
 const safeFilter = true; // 'true' activates the security filters; 'false' deactivates them
@@ -58,7 +58,6 @@ function createStream(title, description, status, category, url, username) {
         profileButton.classList.add('live-button', 'profile-stream');
         profileButton.textContent = 'Profile';
         profileButton.setAttribute('username', username);
-        profileButton.onclick = () => alert(`Viewing profile for: ${username}`);
         streamContainer.appendChild(profileButton);
     }
 
@@ -80,7 +79,7 @@ const streamList = [
         description: "Streaming with TikTok",
         status: "Approved",
         category: "Chat & Interview",
-        url: "https://www.tiktok.com/@flamingavins",
+        url: "https://www.tiktok.com/@flamingavins/live",
         username: "flamingavins"
     }
 ];
