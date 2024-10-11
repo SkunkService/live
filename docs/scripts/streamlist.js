@@ -74,7 +74,16 @@ function createStream(title, description, status, category, url, username) {
 }
 
 // Array containing stream data objects
-const streamList = [];
+const streamList = [
+    {
+        title: "flamingavins's LIVE",
+        description: "Streaming with TikTok",
+        status: "Approved",
+        category: "Chat & Interview",
+        url: "https://www.tiktok.com/@flamingavins",
+        username: "flamingavins"
+    }
+];
 
 /*
 Stream List Example:
