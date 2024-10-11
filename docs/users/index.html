@@ -88,7 +88,7 @@
             border-radius: 50%;
         }
 
-        .verified-icon {
+        .verified-icon, .moderator-icon {
             width: 15px;
             height: 15px;
             margin-left: 5px;
@@ -113,7 +113,8 @@
             transition: opacity 0.3s ease;
         }
 
-        .verified-icon:hover + .tooltip {
+        .verified-icon:hover + .tooltip,
+        .moderator-icon:hover + .tooltip {
             display: block;
             opacity: 1;
         }
@@ -128,27 +129,30 @@
                 <a href="creator">
                     <img src="images/skunkplatform-coloured-bg.png" alt="SkunkPlatform Icon">
                     SkunkPlatform (Creator)
-                    <img src="images/moderator_1.png" class="verified-icon" alt="Moderator Icon"> <!-- Moderator Icon -->
+                    <img src="images/moderator_1.png" class="moderator-icon" alt="Moderator Icon"> <!-- Moderator Icon -->
+                    <span class="tooltip">This User is a Owner</span> <!-- Tooltip for Moderator -->
                     <img src="images/verified2.png" class="verified-icon" alt="Verified Icon">
-                    <span class="tooltip">This User is Verified by the Creator of SkunkPlatform.</span> <!-- Tooltip added -->
+                    <span class="tooltip">This User is Verified by the Creator of SkunkPlatform.</span> <!-- Tooltip for Verified -->
                 </a>
             </li>
             <li>
                 <a href="skunkeditor">
                     <img src="images/skunkeditor.jpeg" alt="SkunkEditor Icon">
                     SkunkEditor (Admin)
-                    <img src="images/moderator_1.png" class="verified-icon" alt="Moderator Icon"> <!-- Moderator Icon -->
+                    <img src="images/moderator_1.png" class="moderator-icon" alt="Moderator Icon"> <!-- Moderator Icon -->
+                    <span class="tooltip">This User is a Admin</span> <!-- Tooltip for Moderator -->
                     <img src="images/verified2.png" class="verified-icon" alt="Verified Icon">
-                    <span class="tooltip">This User is Verified by the Creator of SkunkPlatform.</span> <!-- Tooltip added -->
+                    <span class="tooltip">This User is Verified by the Creator of SkunkPlatform.</span> <!-- Tooltip for Verified -->
                 </a>
             </li>
             <li>
                 <a href="stefke">
                     <img src="images/stefke.webp" alt="Stefke Icon">
                     Stefke (Admin)
-                    <img src="images/moderator_1.png" class="verified-icon" alt="Moderator Icon"> <!-- Moderator Icon -->
+                    <img src="images/moderator_1.png" class="moderator-icon" alt="Moderator Icon"> <!-- Moderator Icon -->
+                    <span class="tooltip">This User is a Admin</span> <!-- Tooltip for Moderator -->
                     <img src="images/verified2.png" class="verified-icon" alt="Verified Icon">
-                    <span class="tooltip">This User is Verified by SkunkPlatform and Stefke was Added as a Admin.</span> <!-- Tooltip added -->
+                    <span class="tooltip">This User is Verified by SkunkPlatform and Stefke was Added as an Admin.</span> <!-- Tooltip for Verified -->
                 </a>
             </li>
             <li>
@@ -156,7 +160,7 @@
                     <img src="images/flamingavins.jpeg" alt="flamingavins Icon">
                     flamingavins
                     <img src="images/verified2.png" class="verified-icon" alt="Verified Icon">
-                    <span class="tooltip">This User is Verified</span> <!-- Tooltip added -->
+                    <span class="tooltip">This User is Verified</span> <!-- Tooltip for Verified -->
                 </a>
             </li>
             <li>
@@ -164,7 +168,7 @@
                     <img src="images/nachitooo0.jpeg" alt="Nachitoo! Icon">
                     Nachitoo!
                     <img src="images/verified2.png" class="verified-icon" alt="Verified Icon">
-                    <span class="tooltip">This User is Verified</span> <!-- Tooltip added -->
+                    <span class="tooltip">This User is Verified</span> <!-- Tooltip for Verified -->
                 </a>
             </li>
             <li>
@@ -172,7 +176,7 @@
                     <img src="images/hiitsabell.jpeg" alt="Annabelle 花 Icon">
                     Annabelle 花
                     <img src="images/verified2.png" class="verified-icon" alt="Verified Icon">
-                    <span class="tooltip">This User is Verified</span> <!-- Tooltip added -->
+                    <span class="tooltip">This User is Verified</span> <!-- Tooltip for Verified -->
                 </a>
             </li>
             <li>
@@ -193,3 +197,4 @@
     <script src="https://cdn.jsdelivr.net/gh/SkunkService/skunkservice.github.io/api/devtools-detection.js"></script>
 </body>
 </html>
+
