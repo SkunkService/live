@@ -64,6 +64,7 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
         }
 
         ul.user-list li:hover {
@@ -80,21 +81,40 @@
         }
 
         ul.user-list li a img {
-            width: 20px; /* Adjusted size */
-            height: 20px; /* Adjusted size */
+            width: 20px;
+            height: 20px;
             margin-right: 10px;
             border-radius: 50%;
         }
 
-        ul.user-list li a .verified-icon {
+        .verified-icon {
             width: 15px;
             height: 15px;
             margin-left: 5px;
+            cursor: pointer;
+            position: relative;
         }
 
-        ul.user-list li a:hover {
-            text-decoration: underline;
-            color: #007BFF;
+        .tooltip {
+            display: none;
+            position: absolute;
+            top: 25px; /* Adjust this value for tooltip placement */
+            left: 0;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .verified-icon:hover + .tooltip {
+            display: block;
+            opacity: 1;
         }
     </style>
 </head>
@@ -108,6 +128,7 @@
                     <img src="images/skunkplatform-coloured-bg.png" alt="SkunkPlatform Icon">
                     SkunkPlatform (Creator & Owner)
                     <img src="images/verified2.png" class="verified-icon" alt="Verified Icon">
+                    <span class="tooltip">This User is Verified</span> <!-- Tooltip added -->
                 </a>
             </li>
             <li>
@@ -115,6 +136,15 @@
                     <img src="images/skunkeditor.jpeg" alt="SkunkEditor Icon">
                     SkunkEditor (Admin)
                     <img src="images/verified2.png" class="verified-icon" alt="Verified Icon">
+                    <span class="tooltip">This User is Verified</span> <!-- Tooltip added -->
+                </a>
+            </li>
+            <li>
+                <a href="flamingavins">
+                    <img src="images/flamingavins.jpeg" alt="flamingavins Icon">
+                    Annabelle 花
+                    <img src="images/verified2.png" class="verified-icon" alt="Verified Icon">
+                    <span class="tooltip">This User is Verified</span> <!-- Tooltip added -->
                 </a>
             </li>
             <li>
@@ -122,6 +152,7 @@
                     <img src="images/nachitooo0.jpeg" alt="Nachitoo! Icon">
                     Nachitoo!
                     <img src="images/verified2.png" class="verified-icon" alt="Verified Icon">
+                    <span class="tooltip">This User is Verified</span> <!-- Tooltip added -->
                 </a>
             </li>
             <li>
@@ -129,6 +160,7 @@
                     <img src="images/hiitsabell.jpeg" alt="Annabelle 花 Icon">
                     Annabelle 花
                     <img src="images/verified2.png" class="verified-icon" alt="Verified Icon">
+                    <span class="tooltip">This User is Verified</span> <!-- Tooltip added -->
                 </a>
             </li>
             <li>
@@ -139,7 +171,7 @@
             </li>
             <li>
                 <a href="delfuux3">
-                    <img src="images/delfuux3.jpeg" alt="dechillgd Icon">
+                    <img src="images/delfuux3.jpeg" alt="delfuux3 Icon">
                     🎃•Delfu•🎃 (Lyna's love)
                 </a>
             </li>
