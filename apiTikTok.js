@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const container = document.getElementById('embed-container');
+    const container = document.getElementById('embed-skunkstream'); // Fetch Element Called embed-skunkstream
     
     // Apply styles directly using JavaScript to container
     container.style.width = '600px';
