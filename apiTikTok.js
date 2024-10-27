@@ -61,4 +61,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Example Embed: <div id="embed-container" className="username"><script src="https://raw.githubusercontent.com/SkunkService/live/main/apiTikTok.js"></div>
+/*
+Allows embedding SkunkStream:
+
+Use this Div element in the HTML body with the TikTok username as the className:
+<div id="embed-skunkstream" className="username"></div>
+
+Use the Script via jsDelivr:
+<script src="https://cdn.jsdelivr.net/gh/SkunkService/live/apiTikTok.js"></script>
+*/
