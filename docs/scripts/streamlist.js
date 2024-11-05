@@ -1,5 +1,5 @@
 // Array of bad words to filter out
-const badWords = ["fuck", "nigger", "nigga", "butt", "puto", "puta", "verga", "poronga", "pene", "pete", "polla", "mueranse", "muere", "morid", "muerte", "muerto", "loli", "mueranse", "n1gg4", "nigg4", "n1gga","n!gga","n!gg4","n!gg3r","n1gg3r","n1gger","nigg3r","n!gger","kill"];
+const badWords = ["fuck", "nigger", "nigga", "butted", "buttes", "puto", "puta", "verga", "poronga", "pene", "pete", "polla", "mueranse", "muere", "morid", "muerte", "muerto", "loli", "mueranse", "n1gg4", "nigg4", "n1gga","n!gga","n!gg4","n!gg3r","n1gg3r","n1gger","nigg3r","n!gger","kill", "butts", "culo", "nsfw", "sfw"];
 
 // Safety by Word Filters for Streaming List Security
 const safeFilter = true; // 'true' activates the security filters; 'false' deactivates them
@@ -81,6 +81,14 @@ const streamList = [
         category: "Chat & Interview",
         url: "https://www.tiktok.com/@flamingavins/live",
         username: "flamingavins"
+    },
+    {
+        title: "اكبر حسابات تيك توك في العالم's LIVE",
+        description: "Streaming with TikTok",
+        status: "Approved",
+        category: "Chat & Interview",
+        url: "https://www.tiktok.com/@bouderdareda/live",
+        username: "bouderdareda"
     }
 ];
 
