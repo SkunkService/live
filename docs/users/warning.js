@@ -25,5 +25,5 @@ document.getElementById('ok').addEventListener('click', closeModal);
 // Event listener for the "Why the User is Advising?" link
 document.getElementById('info-advising').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent the default anchor action
-    showModal('User Advisory', 'This user advises against any violations of the SkunkStream\'s Community Guidelines.\nThis User was Warned.\nReason: Bad Words');
+    showModal('User Advisory', 'This user advises against any violations of the SkunkStream\'s Community Guidelines.\nThis User was Suspended.\nReason: Changing The SkunkPlatform\'s Nickname.');
 });
