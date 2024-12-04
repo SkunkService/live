@@ -38,3 +38,7 @@ We welcome contributions to SkunkPlatform! To contribute:
 
 ## Contact
 For any questions or support, please reach out to [skunkplatformer@gmail.com](mailto:skunkplatformer@gmail.com).
+
+---
+
+Please, Read our License in the Website: https://skunkservice.github.io/live/verification/license
