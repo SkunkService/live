@@ -12,7 +12,7 @@ By using this website, you agree to comply with the **Terms of Service** and **P
 
 ## API Access
 
-The SkunkStream API can be accessed freely for development and documentation purposes. An API key is not required for general use. However, any unauthorized or abusive use of the API will result in access being revoked.
+The SkunkStream API can be accessed freely for development and documentation purposes. An API key is not required for general use. However, any unauthorized or abusive use of the API will result in access being revoked. This API Access allows Dev Users to access Get LIVE or Stream for SkunkStream API.
 
 ## Prohibited Activities
 
