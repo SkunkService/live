@@ -89,6 +89,30 @@ const streamList = [
         category: "Chat & Interview",
         url: "https://www.tiktok.com/@bouderdareda/live",
         username: "bouderdareda"
+    },
+    {
+        title: "@coquiburi's LIVE",
+        description: "Streams with TikTok LIVE Studio",
+        status: "Auto-Recommended",
+        category: "Chat & Interview",
+        url: "https://www.tiktok.com/@coquiburi/live",
+        username: "auto-recommendation"
+    },
+    {
+        title: "Spider-man🕷️🕸️'s LIVE",
+        description: "Streams with TikTok LIVE Studio",
+        status: "Auto-Recommended",
+        category: "Streamer vs Viewer (Contains Minecraft Streaming)",
+        url: "https://www.tiktok.com/@nguoinhenlive/live",
+        username: "auto-recommendation"
+    },
+    {
+        title: "SSALINASS's LIVE",
+        description: "Streams with TikTok LIVE Mobile",
+        status: "Auto-Recommended",
+        category: "Clash Royale, Chat & Interview",
+        url: "https://www.tiktok.com/@ssalinass_s/live",
+        username: "auto-recommendation"
     }
 ];
 
