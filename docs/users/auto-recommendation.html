@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkunkPlatform - Auto Recommendation</title>
+
+    <link rel="icon" href="/images/skunkplatform-coloured-bg.png">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .profile-info h2 {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .profile-info p {
+            color: #666;
+            max-width: 500px;
+            line-height: 1.5;
+        }
+
+        .btn {
+            margin-top: 15px;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.25s ease;
+        }
+
+        .btn-primary {
+            background: #007BFF;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0056b3;
+            transform: scale(1.03);
+        }
+
+        .btn-dark {
+            background: #333;
+            color: white;
+        }
+
+        .btn-dark:hover {
+            background: #555;
+            transform: scale(1.03);
+        }
+
+        #flags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .flag {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #e0e0e0;
+            padding: 6px 12px;
+            margin: 5px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="/live/users">
+        <button class="btn btn-primary">
+            ← Back to Users List
+        </button>
+    </a>
+
+    <div class="container">
+        <h1>Profile: Auto-Recommendation</h1>
+
+        <div class="profile-info">
+            <h2>
+                <i class="fas fa-robot"></i>
+                Auto-Recommendation
+            </h2>
+
+            <p>
+                This is not a real user account.
+                It is used for the Auto-Recommended Streaming List
+                system for Legacy SkunkStream.
+            </p>
+
+            <button
+                class="btn btn-dark"
+                onclick='window.open("https://skunkstream.netlify.app", "_blank")'>
+                Go to Modern SkunkStream
+            </button>
+
+        </div>
+    </div>
+
+</body>
+</html>
