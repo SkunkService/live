@@ -1,5 +1,7 @@
 # SkunkPlatform - The Streamers of Apps
 
+- Classic SkunkStream yep
+
 ## Overview
 SkunkPlatform is designed specifically for HTML-based streaming experiences. It provides a framework for integrating and enhancing LIVE streaming functionality across platforms like TikTok LIVE, YouTube LIVE, and Twitch using HTML.
 
@@ -35,6 +37,12 @@ We welcome contributions to SkunkPlatform! To contribute:
     git push origin feature/your-feature-name
     ```
 5. **Open a Pull Request** on GitHub to submit your changes.
+
+---
+
+## DEPRECATED!
+
+Website does not receive updates. Visit modern one: https://skunkstream.netlify.app
 
 ## Contact
 For any questions or support, please reach out to [skunkplatformer@gmail.com](mailto:skunkplatformer@gmail.com).
