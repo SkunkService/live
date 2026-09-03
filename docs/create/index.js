@@ -1,0 +1,2 @@
+alert("LIVE Stream Creation is not available due to Compromised Webhook, This Webhook URL has been revoked. Old SkunkStream cannot be continued, We recommended to visit at 'https://github.com/skunkservice/live'");
+location.href="/";
